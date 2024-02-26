@@ -12,31 +12,17 @@ using MySql.Data.MySqlClient;
 
 namespace login_register_app
 {
-    public partial class Form1 : Form
+    public partial class loginForm : Form
     {
         public MySqlConnection con;
-        public Form1()
+        public loginForm()
         {
             InitializeComponent();
-            this.con = new MySqlConnection();
-            connection();
+            Koneksi koneksi = new Koneksi();
+            this.con = koneksi.con;
         }
 
-        public void connection()
-        {
-            try
-            {
-                string conn = "server=localhost;uid=root;pwd='';database=latihan_db";
-                this.con.ConnectionString = conn;
-                this.con.Open();
-                MessageBox.Show("Success connection", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-
-        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -94,6 +80,13 @@ namespace login_register_app
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            registerForm register = new registerForm();
+            register.Show();
+            this.Hide();
         }
     }
 }
