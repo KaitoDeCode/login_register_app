@@ -56,7 +56,6 @@ namespace login_register_app
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             login(email.Text,password.Text);
         }
 
@@ -70,6 +69,9 @@ namespace login_register_app
                 cmd.Parameters.AddWithValue("@Password", password);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 MessageBox.Show("Login Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dashboard dash = new Dashboard();
+                dash.Show();
+                this.Hide();
             }
             catch (Exception ex)
             {
