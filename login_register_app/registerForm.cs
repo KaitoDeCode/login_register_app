@@ -51,7 +51,31 @@ namespace login_register_app
 
         private void register()
         {
+            try
+            {
+                String query = "insert into users (name,email,password) values (@name,@email,@password)";
+                MySqlCommand cmd = new MySqlCommand(query,this.con);
+                cmd.Parameters.AddWithValue("@name", fullname.Text);
+                cmd.Parameters.AddWithValue("@email", email.Text);
+                cmd.Parameters.AddWithValue("@password", password.Text);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                MessageBox.Show("Berhasil Register", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                loginForm login = new loginForm();
+                login.Show();
+
+                this.Hide();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           register();
         }
     }
 }

@@ -38,14 +38,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fullname = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.fullname);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -89,6 +89,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -146,12 +147,12 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Fullname";
             // 
-            // textBox1
+            // fullname
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 20);
-            this.textBox1.TabIndex = 8;
+            this.fullname.Location = new System.Drawing.Point(134, 103);
+            this.fullname.Name = "fullname";
+            this.fullname.Size = new System.Drawing.Size(187, 20);
+            this.fullname.TabIndex = 8;
             // 
             // registerForm
             // 
@@ -180,6 +181,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox fullname;
     }
 }
